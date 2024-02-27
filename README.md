@@ -1,0 +1,2 @@
+# zenn-docs
+For zenn
