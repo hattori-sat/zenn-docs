@@ -5,3 +5,4 @@ type: "tech" # tech: 技術記事 / idea: アイデア
 topics: ["問題解決"]
 published: false
 ---
+FTAやSCR，TPSなど．
