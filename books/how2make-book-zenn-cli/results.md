@@ -23,7 +23,7 @@ https://github.com/hattori-sat/zenn-docs
 ----
 
 # 有料本の作り方
-さて，本題に貼りますが，有料本を作る方法は難しくありません．以下の記事を参照すれば作ることが出来ます．
+さて，本題に入りますが，有料本を作る方法は難しくありません．以下の記事を参照すれば作ることが出来ます．
 
 https://zenn.dev/zenn/articles/zenn-cli-guide
 
