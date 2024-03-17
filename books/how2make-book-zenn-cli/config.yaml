@@ -1,5 +1,5 @@
 title: "Zenn CLIで本を作る方法"
-summary: "Zenn CLIが提供されているため，GithubでZennの記事や本をすべて管理することが出来る．しかし，Zenn CLIで本を作る方法についてはあまり説明されていない．今回はZenn CLIでbookを作る方法を紹介する．"
+summary: "Zenn CLIが提供されているため，GithubでZennの記事や本をすべて管理することが出来る．Zenn CLIで有料本を作る際の注意点を記述する．"
 topics: ["book", "zenn", "有料本","how2"] # トピック（5つまで）
 published: true # falseだと下書き
 price: 200 # 有料の場合200〜5000
