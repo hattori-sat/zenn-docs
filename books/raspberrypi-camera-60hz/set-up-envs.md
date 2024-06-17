@@ -60,7 +60,7 @@ sudo raspi-config
 ```
 をすると以下の画面が開くと思います。
 
-![raspi-config](../../images/raspi-camera/1.png)
+![raspi-config](/images/raspi-camera/1.png)
 
 3.INTERFACESのI2CとVNCをenableにしておきます。
 
