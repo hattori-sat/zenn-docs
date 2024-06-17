@@ -71,7 +71,8 @@ sudo reboot
 ```
 
 :::message
-以下のコマンドは打っても打たなくても大丈夫です。
+以下のコマンドは適度なタイミングで打っておいてください。  
+最初は割と時間がかかります。
 ```bash
 sudo apt-get update
 sudo apt-get upgrade -y
@@ -103,7 +104,7 @@ Stream configuration adjusted
 
 ```
 
-:::alert
+:::message alert
 このとき、以下のようにならない場合は、ハード的に接触が悪い可能性があるのでラズパイの電源を切って差し直しましょう。結構奥まで差し込むことができます。  
 なお、電源を切らずに行うとショートして壊れる可能性ありです。
 :::
