@@ -138,7 +138,7 @@ Setting up python3-picamera2 (0.3.19-1) ...
 
 一応、githubにコードをあげているのでクローンして使うことにします。
 
-```terminal
+```bash
 hattori@raspi:~ $ ls
 Bookshelf  Desktop  Documents  Downloads  Music  Pictures  Public  Templates  Videos
 
