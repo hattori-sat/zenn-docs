@@ -60,7 +60,7 @@ sudo raspi-config
 ```
 をすると以下の画面が開くと思います。
 
-![raspi-config](./imgs/1.png)
+![raspi-config](../../images/raspi-camera/1.png)
 
 3.INTERFACESのI2CとVNCをenableにしておきます。
 
@@ -136,7 +136,7 @@ Setting up python3-picamera2 (0.3.19-1) ...
 
 一応、githubにコードをあげているのでクローンして使うことにします。
 
-```bash
+```terminal
 hattori@raspi:~ $ ls
 Bookshelf  Desktop  Documents  Downloads  Music  Pictures  Public  Templates  Videos
 
@@ -183,8 +183,7 @@ hattori@raspi:~/Documents/camera/raspi-camera/function_test $ python3 sample.py
 [0:31:03.162058190] [2264]  INFO RPI pipeline_base.cpp:1144 Using configuration file '/usr/share/libcamera/pipeline/rpi/vc4/rpi_apps.yaml'
 [0:31:03.171828447] [2258]  INFO Camera camera.cpp:1183 configuring streams: (0) 640x480-XBGR8888 (1) 1536x864-SBGGR10_CSI2P
 [0:31:03.172650445] [2264]  INFO RPI vc4.cpp:611 Sensor: /base/soc/i2c0mux/i2c@1/imx708@1a - Selected sensor format: 1536x864-SBGGR10_1X10 - Selected unicam format: 1536x864-pBAA
-QStandardPaths: wrong permissions on runtime directory /run/user/1000, 0770 instead of 0700
-
+QStandardPaths: wrong permissions on runtime directory /run/user/1000, 0770 instead of 0700ß
 ```
 これで、imgsフォルダに画像が保存されているはずです。
 
