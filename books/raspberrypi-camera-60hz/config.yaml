@@ -1,0 +1,9 @@
+title: "RaspberryPiでcamera moduleを用いて60fps未満で画像撮影を行う方法"
+summary: "省略"
+topics: ["raspberrypi", "camera module", "python", "C++"] # トピック（5つまで）
+published: true # falseだと下書き
+price: 200 # 有料の場合200〜5000
+chapters:
+  - introduction # チャプター1
+  - set-up-envs # チャプター2
+  - conclusion # チャプター3
