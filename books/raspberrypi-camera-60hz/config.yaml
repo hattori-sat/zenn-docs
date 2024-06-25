@@ -6,4 +6,5 @@ price: 200 # 有料の場合200〜5000
 chapters:
   - introduction # チャプター1
   - set-up-envs # チャプター2
+  - set-libcamera
   - conclusion # チャプター3

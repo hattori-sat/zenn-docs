@@ -246,6 +246,8 @@ The following packages will be upgraded:
 $ sudo apt-get install libopencv-dev
 # need Python also?
 $ sudo apt-get install python3-opencv
+
+$ sudo apt install -y python3-picamera2 libcamera-apps libcamera-dev
 ```
 
 # reference
