@@ -203,6 +203,9 @@ PythonとProcessingに分けることで、今後それぞれの環境に特化�
 :::
 
 # 5. 2つの物体の物理シミュレーション
+## 5.1. 今回の物理モデル
+
+![](/images/simulator-processing-python/physics-models.drawio.png)
 
 https://www.youtube.com/watch?v=o2QZctsSqnk
 
