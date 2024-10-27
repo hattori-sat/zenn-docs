@@ -453,21 +453,57 @@ https://www.youtube.com/shorts/vLGP0MDY4ow
 画像を取り込むなどの説明は今回は割愛させていただきますが、このように大学生も物理シミュレータを用いて理解を深めることが出来ると思います。
 
 # 6. 本シミュレータの活用手段
+本シミュレータは、windows PCやmacbook airでも動作可能です。
+pythonは現在教育でも使われているようなツールですし、processingもそんなにインストールに手間がかかるものではありません。
 
-# おわりに
+可能であれば、手元のPCに入れていつでもシミュレーションができる環境にあることが望ましいと考えています。
+
+その上でプログラムのどこを変更するべきなのかをこの章でまとめておきたいと思います。
+
+■初期値を変更
+https://github.com/hattori-sat/simulator-processing/blob/main/two-body-simulator/two_body_client.py#L112-L120
+
+■運動方程式に使うパラメータを追加（massなどに合わせて作成しましょう）
+https://github.com/hattori-sat/simulator-processing/blob/main/two-body-simulator/two_body_client.py#L15-L26
+
+■運動方程式を以下に記載します。
+https://github.com/hattori-sat/simulator-processing/blob/main/two-body-simulator/two_body_client.py#L51-L56
+
+■パラメータを設定するためのメソッドを定義しましょう。
+https://github.com/hattori-sat/simulator-processing/blob/main/two-body-simulator/two_body_client.py#L58-L64
+
+■上記で定義したメソッドを用いて、どんな条件でパラメータがどんな値を取るかを考えましょう。
+https://github.com/hattori-sat/simulator-processing/blob/main/two-body-simulator/two_body_client.py#L142-L152
+
+■processingで表示する四角形の大きさなどを以下を変えて調整しましょう。
+https://github.com/hattori-sat/simulator-processing/blob/main/two-body-simulator/twoBodySimulator/twoBodySimulator.pde#L51-L58
+
+# 7. おわりに
 本文書及び提供するコード自体が学習コンテンツとして利用できるようなものとなっていれば幸いです。
-また、今回のコードではMITライセンスを付与しています。よく分からないと思いますので簡単に説明をすると、
+また、今回のコードではMITライセンスを付与しています。よく分からないと思いますので簡単に説明をすると、以下のようなものです。
 - 私が書いたコードには著作権が自動的に発生します
 - 著作権がある場合は誰かがそのコードを使用、改変、再配布するには、著作権者の許可が必要
 - しかし、MITライセンスを付与すれば「著作権表示をすれば自由に使っていい」と示せます
 - それにより、著作権表示があれば利用者は安心して使用や改変、再配布ができます
 
-また、このコードを修正してより良いものになったときに私のGitHubにPullRequestをするなどして、これらのコードをより良いものにしていっていただけると非常に嬉しいところです。
+プログラムを読んで気づいた方もいるかもしれませんが、*np.matrix*で初期値などを定義しています。
+これは大学生になると行列形式でプログラムを書くことが多くなるためです。
+このようにこのプログラムでは**拡張性**を持たせております。
 
+この題材を用いて、**固有値**を説明した文書を*有料*で公開しようと思いますのでお待ちください。
 
-# 参考文献
+ここまでお読みいただきありがとうございました。
+この文書がお役に立つことを祈っております。
+ご指摘の点や修正する点などございましたら、気軽にコメントいただけますと幸いです。
+また、GitHubに対しても気軽にforkしていただいたり、PRを出していただけますと幸いです。
+
+もし、コメント等をしにくい場合は、`hattori.sat@gmail.com`までご連絡ください。
+
+# 8. 参考文献
 1. 高校物理ICT教材、https://physics.cloudfree.jp/
-2. 
+
+GitHub：
+https://github.com/hattori-sat/simulator-processing/tree/main
 
 テンプレート：
 https://zenn.dev/hattori_sat/articles/github-zenn-template-20240227
