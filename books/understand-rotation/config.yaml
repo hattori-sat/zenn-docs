@@ -1,0 +1,9 @@
+title: "三次元の回転を我が物にするための虎の巻"
+summary: "基底から始めて回転行列、クォータニオンまでを論理的に説明しています。"
+topics: ["回転行列", "クォータニオン", "ドローン","ロボット","工学"] # トピック（5つまで）
+published: false # falseだと下書き
+price: 0 # 有料の場合200〜5000
+chapters:
+  - 01-introduction # チャプター1
+  - 02-basis
+  - 03-transform-of-basis # チャプター3
