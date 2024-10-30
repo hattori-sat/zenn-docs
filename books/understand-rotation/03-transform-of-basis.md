@@ -217,12 +217,11 @@ https://w3e.kanazawa-it.ac.jp/math/category/gyouretu/senkeidaisu/henkan-tex.cgi?
 数学的に表現をしておくと（といっても局所的な表現をすると）
 
 - 3次元のベクトル空間 $\mathbb{V}$ の基底を $\{v_1,v_2,v_3\}$としたとき、
-- ベクトル空間の線形写像 $f:\mathbb{V} \rightarrow \mathbb{V}$ を考えたく、
+- ベクトル空間の線形写像 $f:\mathbb{V} \rightarrow \mathbb{V}$ と
 - $\mathbf{v} \in \mathbb{V}$ を用いて、
 - $f(\mathbf{v})=\mathbf{A}\mathbf{v}$ を満たす $\mathbf{A}$ のことを**線型写像の表現行列**と呼び、
-- 表現行列の中でも $\|\mathbf{v}\|=\|f(\mathbf{v})\|$ かつ $\det \mathbf{A}=+1$ となるもの
-
-がいわゆる「大学数学で出てくる回転行列」を指しています。
+- **表現行列**の中でも $\|\mathbf{v}\|=\|f(\mathbf{v})\|$ かつ $\det \mathbf{A}=+1$ となるものを
+- をいわゆる **「大学数学で出てくる回転行列」** を指しています。
 
 以下の文書にこれらの違いを説明している部分があり、とても有用なので余裕があれば読んでみることをお勧めしたいと思います。（工学の世界で怠けた"数学"をしていた自分にはかなり難しかったですが）。
 
