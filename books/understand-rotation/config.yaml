@@ -7,4 +7,5 @@ chapters:
   - 01-introduction # チャプター1
   - 02-basis
   - 03-transform-of-basis # チャプター3
-  - 04-matrix-nature
+  - 04-euclid
+  - 05-matrix-nature
