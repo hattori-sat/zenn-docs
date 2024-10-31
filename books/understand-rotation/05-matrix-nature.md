@@ -34,3 +34,9 @@ $$
 
 となる $\mathbf{R}\in \mathbb{R}^{3\times 3}$ を回転変換の表現行列と呼ぶ。
 
+以下キーワードは少しチェックしておくとよいかもしれません。
+テンソル積・クロネッカー積
+
+
+グラム行列
+https://mathlandscape.com/gram-matrix/
