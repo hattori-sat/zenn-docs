@@ -40,11 +40,9 @@ Fig.3-1のx-y平面を垂直に見るとFig.3-2のようになっている。
 
 このとき、片方の基底をもう片方の基底のベクトルの和で表現することを考えると
 
-$$
-\begin{equation}
+$$\begin{equation}
 \mathbf{e'}_1=(\cos{\psi})\mathbf{e}_1+(\sin{\psi})\mathbf{e}_2
-\end{equation}
-$$
+\end{equation}$$
 
 $$
 \begin{equation}
@@ -52,11 +50,9 @@ $$
 \end{equation}
 $$
 
-$$
-\begin{equation}
-\mathbf{e'}_3=mathbf{e}_3
-\end{equation}
-$$
+$$\begin{equation}
+\mathbf{e'}_3=\mathbf{e}_3
+\end{equation}$$
 
 という関係性を得られます。この関係性を行列を用いて表現してみると
 
@@ -221,7 +217,7 @@ https://w3e.kanazawa-it.ac.jp/math/category/gyouretu/senkeidaisu/henkan-tex.cgi?
 - $\mathbf{v} \in \mathbb{V}$ を用いて、
 - $f(\mathbf{v})=\mathbf{A}\mathbf{v}$ を満たす $\mathbf{A}$ のことを**線型写像の表現行列**と呼び、
 - **表現行列**の中でも $\|\mathbf{v}\|=\|f(\mathbf{v})\|$ かつ $\det \mathbf{A}=+1$ となるものを
-- をいわゆる **「大学数学で出てくる回転行列」** を指しています。
+- **「大学数学で出てくる回転行列」** とここでは呼んでいます。
 
 以下の文書にこれらの違いを説明している部分があり、とても有用なので余裕があれば読んでみることをお勧めしたいと思います。（工学の世界で怠けた"数学"をしていた自分にはかなり難しかったですが）。
 
