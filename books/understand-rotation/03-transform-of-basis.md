@@ -96,7 +96,7 @@ $$
 
 $$
 \begin{equation}
-   \mathbf{C}^T = \begin{bmatrix} \mathbf{e'}_1\cdot \mathbf{e}_1 & \mathbf{e'}_1\cdot \mathbf{e}_2 & \mathbf{e'}_1\cdot \mathbf{e}_3 \\ \mathbf{e'}_2\cdot \mathbf{e}_1 & \mathbf{e'}_2\cdot \mathbf{e}_2 & \mathbf{e'}_2\cdot \mathbf{e}_3 \\ \mathbf{e'}_3\cdot \mathbf{e}_3 & \mathbf{e'}_3\cdot \mathbf{e}_2 & \mathbf{e'}_3\cdot \mathbf{e}_3  \end{bmatrix} 
+   \mathbf{C}^T = \begin{bmatrix} \mathbf{e}_1\cdot \mathbf{e}'_1 & \mathbf{e}_1\cdot \mathbf{e}'_2 & \mathbf{e}_1\cdot \mathbf{e}'_3 \\ \mathbf{e}_2\cdot \mathbf{e}'_1 & \mathbf{e}_2\cdot \mathbf{e}'_2 & \mathbf{e}_2\cdot \mathbf{e}'_3 \\ \mathbf{e}_3\cdot \mathbf{e}'_3 & \mathbf{e}_3\cdot \mathbf{e}'_2 & \mathbf{e}_3\cdot \mathbf{e}'_3  \end{bmatrix}
 \end{equation} 
 $$
 
@@ -128,21 +128,13 @@ $$
 \end{equation}
 $$
 
-となります。この式(12)を両辺転置すると（この関係性も後の章でまとめて説明します）
-
-$$
-\begin{equation}
-\begin{bmatrix} \mathbf{e'}_1 & \mathbf{e'}_2 & \mathbf{e'}_3  \end{bmatrix} = \begin{bmatrix} \mathbf{e}_1 & \mathbf{e}_2 & \mathbf{e}_3  \end{bmatrix}\mathbf{C}^T
-\end{equation}
-$$
-
-となります。この式(12)の形はどこかで見たことある形となっています。再度式(1)を示すと
+となります。この式(11)の形はどこかで見たことある形となっています。再度式(1)を示すと
 
 $$
 \mathbf{r'} = \begin{bmatrix} \mathbf{e'}_1&\mathbf{e'}_2&\mathbf{e'}_3 \end{bmatrix} \begin{bmatrix} x'_a \\ y'_a \\ z'_a  \end{bmatrix} 
 $$
 
-という形でした。この式に式(12)を代入すると
+という形でした。この式に式(11)を代入すると
 
 $$
 \begin{equation}

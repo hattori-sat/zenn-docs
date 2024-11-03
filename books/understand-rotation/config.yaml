@@ -2,11 +2,13 @@ title: "回転の運動方程式を理解するための基礎知識：オイラ
 summary: "基底から始めて回転行列、クォータニオンまでを論理的に説明しています。"
 topics: ["回転行列", "クォータニオン", "ドローン","ロボット","工学"] # トピック（5つまで）
 published: true # falseだと下書き
-price: 0 # 有料の場合200〜5000
+price: 500 # 有料の場合200〜5000
 chapters:
   - 01-introduction # チャプター1
   - 02-basis
   - 03-transform-of-basis # チャプター3
   - 04-euclid
   - 05-matrix-nature
+  - 06-euler-angle
+  - 07-quaternion
   - 99-reference
