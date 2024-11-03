@@ -58,7 +58,7 @@ $$\begin{equation}
 
 $$
 \begin{equation}
-\begin{bmatrix} \mathbf{e'}_1 \\ \mathbf{e'}_2 \\ \mathbf{e'}_3  \end{bmatrix} = \begin{bmatrix} \cos{\psi} & \sin{\psi} & 0 \\ -\sin{\psi} & \cos{\psi} & 0 \\ 0 & 0 & 1  \end{bmatrix} \begin{bmatrix} \mathbf{e}_1 \\ \mathbf{e}_2 \\ \mathbf{e}_3  \end{bmatrix}
+\begin{bmatrix} \mathbf{e'}_1 & \mathbf{e'}_2 & \mathbf{e'}_3  \end{bmatrix} = \begin{bmatrix} \mathbf{e}_1 & \mathbf{e}_2 & \mathbf{e}_3  \end{bmatrix} \begin{bmatrix} \cos{\psi} & -\sin{\psi} & 0 \\ \sin{\psi} & \cos{\psi} & 0 \\ 0 & 0 & 1  \end{bmatrix} 
 \end{equation}
 $$
 
@@ -66,7 +66,7 @@ $$
 
 $$
 \begin{equation}
-    \mathbf{C} = \begin{bmatrix} \cos{\psi} & \sin{\psi} & 0 \\ -\sin{\psi} & \cos{\psi} & 0 \\ 0 & 0 & 1  \end{bmatrix}
+    \mathbf{C}^T = \begin{bmatrix} \cos{\psi} & -\sin{\psi} & 0 \\ \sin{\psi} & \cos{\psi} & 0 \\ 0 & 0 & 1  \end{bmatrix}
 \end{equation}
 $$
 
@@ -78,7 +78,7 @@ $$
 
 $$
 \begin{equation}
-\begin{bmatrix} \mathbf{e'}_1 \\ \mathbf{e'}_2 \\ \mathbf{e'}_3  \end{bmatrix} \begin{bmatrix} \mathbf{e}_1 & \mathbf{e}_2 & \mathbf{e}_3  \end{bmatrix}= \mathbf{C}\begin{bmatrix} \mathbf{e}_1 \\ \mathbf{e}_2 \\ \mathbf{e}_3  \end{bmatrix}\begin{bmatrix} \mathbf{e}_1 & \mathbf{e}_2 & \mathbf{e}_3  \end{bmatrix}
+\begin{bmatrix} \mathbf{e}_1^T \\ \mathbf{e}_2^T \\ \mathbf{e}_3^T  \end{bmatrix}\begin{bmatrix} \mathbf{e'}_1 & \mathbf{e'}_2 & \mathbf{e'}_3  \end{bmatrix} = \begin{bmatrix} \mathbf{e}_1^T \\ \mathbf{e}_2^T \\ \mathbf{e}_3^T  \end{bmatrix} \begin{bmatrix} \mathbf{e}_1 & \mathbf{e}_2 & \mathbf{e}_3  \end{bmatrix}\mathbf{C}^T
 \end{equation}
 $$
 
@@ -88,7 +88,7 @@ $$
 
 $$
 \begin{equation}
-   \begin{bmatrix} \mathbf{e'}_1\cdot \mathbf{e}_1 & \mathbf{e'}_1\cdot \mathbf{e}_2 & \mathbf{e'}_1\cdot \mathbf{e}_3 \\ \mathbf{e'}_2\cdot \mathbf{e}_1 & \mathbf{e'}_2\cdot \mathbf{e}_2 & \mathbf{e'}_2\cdot \mathbf{e}_3 \\ \mathbf{e'}_3\cdot \mathbf{e}_3 & \mathbf{e'}_3\cdot \mathbf{e}_2 & \mathbf{e'}_3\cdot \mathbf{e}_3  \end{bmatrix} = \mathbf{C} \begin{bmatrix} 1&0&0\\0&1&0\\0&0&1 \end{bmatrix}
+   \begin{bmatrix} \mathbf{e}_1\cdot \mathbf{e}'_1 & \mathbf{e}_1\cdot \mathbf{e}'_2 & \mathbf{e}_1\cdot \mathbf{e}'_3 \\ \mathbf{e}_2\cdot \mathbf{e}'_1 & \mathbf{e}_2\cdot \mathbf{e}'_2 & \mathbf{e}_2\cdot \mathbf{e}'_3 \\ \mathbf{e}_3\cdot \mathbf{e}'_3 & \mathbf{e}_3\cdot \mathbf{e}'_2 & \mathbf{e}_3\cdot \mathbf{e}'_3  \end{bmatrix} = \begin{bmatrix} 1&0&0\\0&1&0\\0&0&1 \end{bmatrix}\mathbf{C}^T 
 \end{equation} 
 $$
 
@@ -96,18 +96,18 @@ $$
 
 $$
 \begin{equation}
-   \mathbf{C} = \begin{bmatrix} \mathbf{e'}_1\cdot \mathbf{e}_1 & \mathbf{e'}_1\cdot \mathbf{e}_2 & \mathbf{e'}_1\cdot \mathbf{e}_3 \\ \mathbf{e'}_2\cdot \mathbf{e}_1 & \mathbf{e'}_2\cdot \mathbf{e}_2 & \mathbf{e'}_2\cdot \mathbf{e}_3 \\ \mathbf{e'}_3\cdot \mathbf{e}_3 & \mathbf{e'}_3\cdot \mathbf{e}_2 & \mathbf{e'}_3\cdot \mathbf{e}_3  \end{bmatrix} 
+   \mathbf{C}^T = \begin{bmatrix} \mathbf{e'}_1\cdot \mathbf{e}_1 & \mathbf{e'}_1\cdot \mathbf{e}_2 & \mathbf{e'}_1\cdot \mathbf{e}_3 \\ \mathbf{e'}_2\cdot \mathbf{e}_1 & \mathbf{e'}_2\cdot \mathbf{e}_2 & \mathbf{e'}_2\cdot \mathbf{e}_3 \\ \mathbf{e'}_3\cdot \mathbf{e}_3 & \mathbf{e'}_3\cdot \mathbf{e}_2 & \mathbf{e'}_3\cdot \mathbf{e}_3  \end{bmatrix} 
 \end{equation} 
 $$
 
-となる。さて、先ほど$\mathbf{C}$を基底変換行列や回転行列と呼ぶと説明しましたが、まだ別名があります。
+となる。さて、先ほど $\mathbf{C}$ を基底変換行列や回転行列と呼ぶと説明しましたが、まだ別名があります。
 式(9)をみると内積がたくさんあることが分かると思います。
 
 ここで、内積の定義を確認しておくと（あまり意味はないが）角度 $\alpha\in\mathbb{R}$ を用いて
 
 $$
 \begin{equation}
-     \mathbf{e'}_1\cdot \mathbf{e}_1=| \mathbf{e'}_1| |\mathbf{e}_1| \cos{\alpha}
+     \mathbf{e}_1\cdot \mathbf{e}'_1=| \mathbf{e}_1| |\mathbf{e}'_1| \cos{\alpha}
 \end{equation}
 $$
 
@@ -124,7 +124,7 @@ $$
 
 $$
 \begin{equation}
-\begin{bmatrix} \mathbf{e'}_1 \\ \mathbf{e'}_2 \\ \mathbf{e'}_3  \end{bmatrix} = \mathbf{C}\begin{bmatrix} \mathbf{e}_1 \\ \mathbf{e}_2 \\ \mathbf{e}_3  \end{bmatrix}
+\begin{bmatrix} \mathbf{e'}_1 & \mathbf{e'}_2 & \mathbf{e'}_3  \end{bmatrix} = \begin{bmatrix} \mathbf{e}_1 & \mathbf{e}_2 & \mathbf{e}_3  \end{bmatrix}\mathbf{C}^T
 \end{equation}
 $$
 
@@ -183,9 +183,10 @@ $$
 
 また、人工衛星などの教科書や論文に出てくる表現として、式(11)の意味の行列 $\mathbf{C}$ を $\mathbf{C}^{A'/A}$ と表現することがあるので注意しましょう。割とこの辺りの表現に躓くこともありますので表現に慣れていくとよいと思います。
 
-$$
-
-$$
+:::message
+式(6)で初出の行列であるにもかかわらず転置行列で定義したのが気持ち悪く感じたと思います。理由としては式(16)のような関係を得たいからです。
+割と慣習的にこのような表現になっていますのでこの書き方をしました。
+:::
 
 ----
 
