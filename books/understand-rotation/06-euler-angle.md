@@ -7,6 +7,12 @@ free: false
   - [固有値](#固有値)
   - [オイラーの定理の理解](#オイラーの定理の理解)
 - [オイラー角](#オイラー角)
+  - [オイラー角について説明](#オイラー角について説明)
+  - [座標変換してみる](#座標変換してみる)
+- [運動方程式で違いを実感する](#運動方程式で違いを実感する)
+- [オイラー角を実感してみよう](#オイラー角を実感してみよう)
+  - [基底変換行列（回転行列）のオイラー角](#基底変換行列回転行列のオイラー角)
+  - [回転変換の表現行列のオイラー角](#回転変換の表現行列のオイラー角)
 
 
 # オイラーの定理
@@ -209,6 +215,7 @@ $$
 ----
 
 # オイラー角
+## オイラー角について説明
 ここからは、オイラー角の説明をします。
 正直オイラーの定理について理解する方が難しい気もします。
 
@@ -236,6 +243,9 @@ $$
 $$
 
 という条件があり、6つの拘束条件があります。そして、方向余弦行列では9つの自由度があったため、$9-6=3$ で3自由度で良くなるという寸法です。
+ちなみに、3自由度という制限しかないので、
+- x軸→y軸→x軸周りの回転でもよい（3変数定義することになるので方程式の解は定まる）
+- x軸→x軸→x軸周りの回転は単にx軸周りの回転に集約されてしまうので1自由度の固定としかならない
 
 さて、ではオイラー角を示そうと思いますが、実は考え方が2つあります。
 
@@ -246,11 +256,11 @@ $$
 :::
 
 本書では、2つ目の考え方でのオイラー角の説明を行います。
-なぜならば、2詰めの考え方がドローンや人工衛星に固定の座標系を考えたときにマッチした考え方であり、（ジャイロセンサなどの）センサ情報で得られるのは物体に固定された座標系の情報なので、実際にオイラー角を使うときには物体固定の座標系を使う機会がほとんどだからです。
+なぜならば、2つ目の考え方がドローンや人工衛星に固定の座標系を考えたときにマッチした考え方であり、（ジャイロセンサなどの）センサ情報で得られるのは物体に固定された座標系の情報なので、実際にオイラー角を使うときには物体固定の座標系を使う機会がほとんどだからです。
 
 3章の式(2)から式(6)で $z$ 軸周りの回転を示すオイラー角を求めています。
 $x$軸周りの回転は $\phi$、$y$軸周りの回転は $\theta$、$z$軸周りの回転は $\psi$ と表すことが多いです。
-それぞれオイラー角を示すと
+それぞれの軸周りの回転行列を示すと
 
 ■ $x$軸周り
 
@@ -275,5 +285,238 @@ $$
     \mathbf{C}_3(\psi) = \begin{bmatrix} \cos{\psi} & \sin{\psi} & 0 \\ -\sin{\psi} & \cos{\psi} & 0 \\ 0 & 0 & 1  \end{bmatrix}
 \end{equation}
 $$
+
+となります。さて、このときの回転行列というのは参照で紹介した以下の式
+
+$$
+\begin{equation}
+\begin{bmatrix} \mathbf{e'}_1 & \mathbf{e'}_2 & \mathbf{e'}_3  \end{bmatrix} = \begin{bmatrix} \mathbf{e}_1 & \mathbf{e}_2 & \mathbf{e}_3  \end{bmatrix}\mathbf{C}^T
+\end{equation}
+$$
+
+の行列 $\mathbf{C}$ のことです（式(16)、式(17)、式(18) をそのまま式(19)に代入すれば問題ないです）。
+
+さて、このときの角度 $\phi, \theta,\psi$ のことを**オイラー角**と呼びます。
+
+:::details どうでもいい補足
+オイラー角自体は位置ベクトルのように、$\mathbf{r}=\begin{bmatrix}x&y&z\end{bmatrix}^T$ のように角度ベクトルのようなものではないことに注意しましょう。
+
+他方で、角速度ベクトルは大きな意味があります。
+これは角速度ベクトルを定義することから始める必要がありますが、角速度ベクトルの概念が変わりますのでぜひ調べてみていただきたいです。 
+:::
+
+----
+
+## 座標変換してみる
+Fig.6-1 のように固定された座標系（**物体座標系**と呼びます）周りでの回転を考えてみましょう。
+最初は静止座標系 A （ユークリッド空間で正規直行基底を採る）と同じ基底を採っていたものとして、物体座標系のx軸周りに回転させたときの静止座標系から見た座標系を A' として、その座標系A'のy軸周りに回転させた座標系をA"とし、その座標系A" からz軸周りに回転させた座標系をBとします。
+
+（ややこしくなりますが、A'やA"、Bの座標系は非慣性座標系となり遠心力やらコリオリ力などの見かけの力を体感可能です。実際の外力ではなく座標系自体が動いていることによって力が掛かっているように見えるだけですが。）
+
+
+![](/images/understand-rotation/euler-angle.drawio.png)
+*Fig.6-1 物体固定座標系*
+
+さて、数式で表現してみましょう。座標系が回転しているということですので式(19)をそのまま使えるわけです（3章で同じ手続きで導出したためです）。
+
+それぞれの基底は座標系の小文字を使うことにします。(何度もしつこいですが、ここでのダッシュやダッシュ2個は微分を示しているわけではありません。)
+
+■ 固定座標系のx軸周りでの回転（最初は静止座標系 A）：A→A'
+
+$$
+\begin{equation}
+\begin{bmatrix} \mathbf{a}'_1 & \mathbf{a}'_2 & \mathbf{a}'_3  \end{bmatrix} = \begin{bmatrix} \mathbf{a}_1 & \mathbf{a}_2 & \mathbf{a}_3  \end{bmatrix}\mathbf{C}_1^T(\phi)
+\end{equation}
+$$
+
+■ 固定座標系のy軸周りでの回転：A'→A"
+
+$$
+\begin{equation}
+\begin{bmatrix} \mathbf{a}''_1 & \mathbf{a}''_2 & \mathbf{a}''_3  \end{bmatrix} = \begin{bmatrix} \mathbf{a'}_1 & \mathbf{a'}_2 & \mathbf{a'}_3  \end{bmatrix}\mathbf{C}_2^T(\theta)
+\end{equation}
+$$
+
+■ 固定座標系のz軸周りでの回転：A"→B
+
+$$
+\begin{equation}
+ \begin{bmatrix} \mathbf{b}_1 & \mathbf{b}_2 & \mathbf{b}_3  \end{bmatrix}=\begin{bmatrix} \mathbf{a}''_1 & \mathbf{a}''_2 & \mathbf{a}''_3  \end{bmatrix}\mathbf{C}_3^T(\theta) 
+\end{equation}
+$$
+
+ここで私たちが知りたいのは、回転する前と回転した後の関係だけです。それは式(20)から式(22)までを使えば求めることが出来ます。代入をしていくと
+
+$$
+\begin{align}
+        \begin{bmatrix} \mathbf{b}_1 & \mathbf{b}_2 & \mathbf{b}_3  \end{bmatrix}
+        &=\begin{bmatrix} \mathbf{a}''_1 & \mathbf{a}''_2 & \mathbf{a}''_3  \end{bmatrix}\mathbf{C}_3^T(\psi) \\
+        &=\begin{bmatrix} \mathbf{a}'_1 & \mathbf{a}'_2 & \mathbf{a}'_3  \end{bmatrix}\mathbf{C}_2^T(\theta)\mathbf{C}_3^T(\psi) \\
+        &=\begin{bmatrix} \mathbf{a}_1 & \mathbf{a}_2 & \mathbf{a}_3  \end{bmatrix}\mathbf{C}_1^T(\phi)\mathbf{C}_2^T(\theta)\mathbf{C}_3^T(\psi) 
+\end{align}
+$$
+
+という関係を得ることが出来ました。慣習的に
+
+$$
+\begin{equation}
+    {\mathbf{C}^{B/A}}^T=\mathbf{C}_1^T(\phi)\mathbf{C}_2^T(\theta)\mathbf{C}_3^T(\psi) 
+\end{equation}
+$$
+$$
+\begin{equation}
+    {\mathbf{C}^{B/A}}\equiv\mathbf{C}_3(\psi)\mathbf{C}_2(\theta) \mathbf{C}_1(\phi)
+\end{equation}
+$$
+
+と書かれ、座標系Aから座標系Bへの回転行列と呼ばれます。つまり、各座標系における成分同士の関係は、
+
+$$
+\begin{equation}
+    \begin{bmatrix}
+        x_b \\ y_b \\ z_b
+    \end{bmatrix} = \mathbf{C}^{B/A} \begin{bmatrix}
+        x_a \\ y_a \\ z_a
+    \end{bmatrix}
+\end{equation}
+$$
+
+と求めることが出来ます。
+
+こちらも何度も言いますが、これは固定座標系周りの回転を表現したものです。
+ロボットや人工衛星などで取得できる情報から、静止座標系からの回転を知りたいために使うような用途のものです。
+（ちなみに式(25) は行列の演算からすると逆順のような感じがしてかなり気持ち悪いです。）
+
+----
+
+この辺り、ちゃんと解説されていることが少ないので説明をすると、オイラー角の考え方1というのは、「**同じ座標系において回転を考える場合**」です。
+つまり、オイラー角を**回転変換の表現行列**として使うということです。
+
+![](/images/understand-rotation/seishi-rotation.drawio.png)
+*Fig.6-2 考え方1の回転*
+
+Fig.6-2 が原点からの距離が1で回転した時のことを考えると
+
+$$
+\begin{equation}
+    x_1= \cos{\alpha},\quad y_1=\sin{\alpha},\quad z_1=0
+\end{equation}
+$$
+
+$$
+\begin{align}
+    x'_1&= \cos{(\alpha+\psi)}=\cos{\alpha}\cos{\psi} - \sin{\alpha}\sin{\psi}=(\cos{\psi})x_1-(\sin{\psi})y_1\\
+    y'_1&=\sin{(\alpha+\psi)}= \cos{\alpha}\sin{\psi} + \sin{\alpha}\cos{\psi}=(\sin{\psi})x_1+(\cos{\psi})y_1\\
+    z'_1&=0
+\end{align}
+$$
+
+よって、
+
+$$
+\begin{equation}
+    \begin{bmatrix}
+        x'_1 \\ x'_2 \\ x'_3
+    \end{bmatrix} =  \begin{bmatrix} \cos{\psi} & -\sin{\psi} & 0 \\ \sin{\psi} & \cos{\psi} & 0 \\ 0 & 0 & 1  \end{bmatrix}\begin{bmatrix}
+        x_1 \\ x_2 \\ x_3
+    \end{bmatrix}
+\end{equation}
+$$
+
+となるわけです。（z軸周りの回転を表す回転行列であるはずなのに、行列の1行目2列の値と2行目1列の値が逆になっています。この辺りの正負は毎回チェックして考えるようにしましょう。）
+
+:::message
+以上のことから「基底を回転させ、その基底どうしの回転の関係を示す方向余弦行列（回転行列）」と「同じ座標系で何かを回転させるという回転変換の表現行列」は同じ性質を持つ回転行列（SO(3)）ではありますが、考え方が全く違うものとなります。
+:::
+
+----
+
+# 運動方程式で違いを実感する
+さて、ここまで説明をした結果、「違いをすっきり理解できたがだからなんだ？」という人や「よくまだすっきりしない」という人もいるでしょう。
+これは**運動方程式を立ててみることで違いが理解がしやすい**です。
+
+ニュートンの運動方程式
+
+$$
+\begin{equation}
+m \ddot{\mathbf{r}}=\mathbf{F}    
+\end{equation}
+
+$$
+
+は**ガリレイ変換**および**回転変換**において**ベクトル表現であれば形式は変化しません**。
+(これを**一般共変性原理**といいます。相対性理論などで出てきます。)
+
+まずは、物体固定座標系における運動方程式を考えましょう。
+共変性により、運動方程式は回転座標系であっても式(34)で書くことが出来ます。しかし、静止座標系で表現したいときは
+
+$$
+\begin{equation}
+    m\begin{bmatrix}
+        \ddot{x_b} \\ \ddot{y_b} \\ \ddot{z_b}
+    \end{bmatrix}=\mathbf{F}_b    
+\end{equation}
+$$
+
+とはなりません。なぜならば、ベクトルの基底を考える必要があるからです。静止座標系の基底の微分は0となることに注意して以下の変換を見てみましょう。
+($\mathbf{R}_a=\begin{bmatrix} \mathbf{a}_1 & \mathbf{a}_2 & \mathbf{a}_3  \end{bmatrix}$ としたら $\dot{\mathbf{R}}_a=\mathbf{0}$ )
+
+$$
+\begin{align}
+    \mathbf{r}&=\begin{bmatrix} \mathbf{b}_1 & \mathbf{b}_2 & \mathbf{b}_3  \end{bmatrix}\begin{bmatrix}x_b \\ y_b \\ z_b\end{bmatrix}= \begin{bmatrix} \mathbf{a}_1 & \mathbf{a}_2 & \mathbf{a}_3  \end{bmatrix} {\mathbf{C}^{B/A}}^T \begin{bmatrix}x_b \\ y_b \\ z_b\end{bmatrix}=\mathbf{R}_a{\mathbf{C}^{B/A}}^T \begin{bmatrix}x_b \\ y_b \\ z_b\end{bmatrix}\\
+
+    \dot{\mathbf{r}}&=\dot{\mathbf{R}}_a{\mathbf{C}^{B/A}}^T \begin{bmatrix}x_b \\ y_b \\ z_b\end{bmatrix}+\mathbf{R}_a{\dot{\mathbf{C}}^{B/A}}^T \begin{bmatrix}x_b \\ y_b \\ z_b\end{bmatrix}+\mathbf{R}_a{\mathbf{C}^{B/A}}^T \begin{bmatrix}\dot{x_b} \\ \dot{y_b} \\ \dot{z_b}\end{bmatrix}\\
+
+    \ddot{\mathbf{r}}&=\mathbf{R}_a{\ddot{\mathbf{C}}^{B/A}}^T \begin{bmatrix}x_b \\ y_b \\ z_b\end{bmatrix}+2\mathbf{R}_a{\dot{\mathbf{C}}^{B/A}}^T \begin{bmatrix}\dot{x_b} \\ \dot{y_b} \\ \dot{z_b}\end{bmatrix}+\mathbf{R}_a{\mathbf{C}^{B/A}}^T \begin{bmatrix}\ddot{x_b} \\ \ddot{y_b} \\ \ddot{z_b}\end{bmatrix}
+\end{align}
+$$
+
+よって、運動方程式は静止座標系において、
+
+$$
+\begin{equation}
+    m\begin{Bmatrix}
+        {\ddot{\mathbf{C}}^{B/A}}^T \begin{bmatrix}x_b \\ y_b \\ z_b\end{bmatrix}+2{\dot{\mathbf{C}}^{B/A}}^T \begin{bmatrix}\dot{x_b} \\ \dot{y_b} \\ \dot{z_b}\end{bmatrix}+{\mathbf{C}^{B/A}}^T \begin{bmatrix}\ddot{x_b} \\ \ddot{y_b} \\ \ddot{z_b}\end{bmatrix}
+    \end{Bmatrix}=\mathbf{F}_b
+\end{equation}
+$$
+
+となるので、
+
+$$
+\begin{equation}
+    m\begin{bmatrix}\ddot{x_b} \\ \ddot{y_b} \\ \ddot{z_b}\end{bmatrix}=\mathbf{F}_b-m{\mathbf{C}^{B/A}}{\ddot{\mathbf{C}}^{B/A}}^T \begin{bmatrix}x_b \\ y_b \\ z_b\end{bmatrix}-2{\mathbf{C}^{B/A}}{\dot{\mathbf{C}}^{B/A}}^T \begin{bmatrix}\dot{x_b} \\ \dot{y_b} \\ \dot{z_b}\end{bmatrix} 
+\end{equation}
+$$
+
+と表現できます。式(40) の右辺第二項は遠心力、右辺第三項はコリオリ力と呼ばれています。
+
+一方で、Fig.6-2に示すような**回転変換の表現行列**の場合は、静止座標系において、物体が運動しているだけなので、
+
+$$
+\begin{equation}
+    m\begin{bmatrix}
+        \ddot{x_a} \\ \ddot{y_a} \\ \ddot{z_a}
+    \end{bmatrix}=\mathbf{F}_a    
+\end{equation}
+$$
+
+で表現できます。
+
+このように同じ回転行列（オイラー角）であっても、運動方程式を立てたときに違いを感じると思います。
+
+:::message
+式(40)は物体に固定された座標系で得られる値（加速度や速度、角速度など）であるので、この式を用いることで表現できることはとても重要である。
+:::
+
+----
+
+# オイラー角を実感してみよう
+## 基底変換行列（回転行列）のオイラー角
+pythonスクリプトを記載。
+
+
+## 回転変換の表現行列のオイラー角
+pythonスクリプトを記載。
 
 ----
