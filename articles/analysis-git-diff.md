@@ -1,5 +1,5 @@
 ---
-title: "git diff の中身を少し追ってみる"
+title: "「git diff」のソースを読んで理解を深める"
 emoji: 🧑‍💻
 type: "tech" # tech: 技術記事 / idea: アイデア
 topics: ["git", "diff", "c-lang","github"]
