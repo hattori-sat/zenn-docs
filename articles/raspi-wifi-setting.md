@@ -3,7 +3,7 @@ title: "静的IPアドレスを設定したラズパイのSDカードを異な�
 emoji: "📑"
 type: "tech" # tech: 技術記事 / idea: アイデア
 topics: ["Debian", "RaspberryPi", "NetworkManager"]
-published: false
+published: true
 ---
 
 # 1. 概要
